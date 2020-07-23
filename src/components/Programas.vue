@@ -20,7 +20,7 @@ export default {
       return moment().format('HH')
     },
     next () {
-      return Intl.NumberFormat('pt-BR', { minimumIntegerDigits: 2 }).format(Number(this.atual) + 1) % 24
+      return Intl.NumberFormat('pt-BR', { minimumIntegerDigits: 2 }).format((Number(this.atual) + 1) % 24)
     }
   },
   data () {
