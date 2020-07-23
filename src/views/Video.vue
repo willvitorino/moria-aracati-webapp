@@ -48,11 +48,5 @@ export default {
 <style lang="scss" scoped>
   #video {
     width: 100%;
-    // height: 100%;
-    border-color: black;
-
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
   }
 </style>
