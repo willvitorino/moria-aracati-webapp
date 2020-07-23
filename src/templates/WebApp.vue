@@ -20,7 +20,7 @@
             <router-view />
           </div>
           <div class="col text-center">
-            Lista de Programas
+            <programas />
           </div>
         </div>
         <a href="https://wa.me/5588998664393" class="zap lg" role="button">
@@ -50,7 +50,9 @@
 
 <script>
 export default {
-
+  components: {
+    programas: () => import('../components/Programas')
+  }
 }
 </script>
 
