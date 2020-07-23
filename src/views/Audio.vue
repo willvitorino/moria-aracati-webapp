@@ -1,5 +1,5 @@
 <template>
-  <div class="card border-dark text-center h-100 rounded-0">
+  <div class="card border-dark text-center h-100 w-100 rounded-0">
     <div class="card-body bg-dark text-white">
       <div class="row">
         <div class="col">
@@ -18,24 +18,24 @@
       </div>
       <div class="row my-2">
         <div class="col">
-          <b-icon icon="bar-chart" font-scale="1.5" variant="danger" shift-v="1" />
-          <b-icon icon="bar-chart" font-scale="1.5" variant="danger" flip-h shift-v="1" />
-          <b-icon icon="bar-chart" font-scale="1.5" variant="danger" flip-v shift-v="-8" />
-          <b-icon icon="bar-chart" font-scale="1.5" variant="danger" flip-v flip-h shift-v="-8" />
-          <b-icon icon="bar-chart" font-scale="1.5" variant="danger" shift-v="1" />
-          <b-icon icon="bar-chart" font-scale="1.5" variant="danger" flip-h shift-v="1" />
-          <b-icon icon="bar-chart" font-scale="1.5" variant="danger" flip-v shift-v="-8" />
-          <b-icon icon="bar-chart" font-scale="1.5" variant="danger" flip-v flip-h shift-v="-8" />
-          <b-icon icon="bar-chart" font-scale="1.5" variant="danger" shift-v="1" />
-          <b-icon icon="bar-chart" font-scale="1.5" variant="danger" flip-h shift-v="1" />
-          <b-icon icon="bar-chart" font-scale="1.5" variant="danger" flip-v shift-v="-8" />
-          <b-icon icon="bar-chart" font-scale="1.5" variant="danger" flip-v flip-h shift-v="-8" />
+          <b-icon animation="fade" icon="bar-chart" font-scale="1.5" variant="danger" shift-v="1" />
+          <b-icon animation="fade" icon="bar-chart" font-scale="1.5" variant="danger" flip-h shift-v="1" />
+          <b-icon animation="fade" icon="bar-chart" font-scale="1.5" variant="danger" flip-v shift-v="-8" />
+          <b-icon animation="fade" icon="bar-chart" font-scale="1.5" variant="danger" flip-v flip-h shift-v="-8" />
+          <b-icon animation="fade" icon="bar-chart" font-scale="1.5" variant="danger" shift-v="1" />
+          <b-icon animation="fade" icon="bar-chart" font-scale="1.5" variant="danger" flip-h shift-v="1" />
+          <b-icon animation="fade" icon="bar-chart" font-scale="1.5" variant="danger" flip-v shift-v="-8" />
+          <b-icon animation="fade" icon="bar-chart" font-scale="1.5" variant="danger" flip-v flip-h shift-v="-8" />
+          <b-icon animation="fade" icon="bar-chart" font-scale="1.5" variant="danger" shift-v="1" />
+          <b-icon animation="fade" icon="bar-chart" font-scale="1.5" variant="danger" flip-h shift-v="1" />
+          <b-icon animation="fade" icon="bar-chart" font-scale="1.5" variant="danger" flip-v shift-v="-8" />
+          <b-icon animation="fade" icon="bar-chart" font-scale="1.5" variant="danger" flip-v flip-h shift-v="-8" />
         </div>
       </div>
     </div>
     <div class="card-footer bg-dark p-0">
       <button v-if="!plaing" class="btn rounded-circle mx-2 my-0" @click="play" >
-        <b-iconstack font-scale="3">
+        <b-iconstack font-scale="3" >
           <b-icon stacked icon="circle-fill" variant="danger"></b-icon>
           <b-icon stacked icon="play-fill" variant="light" scale="0.5"></b-icon>
         </b-iconstack>

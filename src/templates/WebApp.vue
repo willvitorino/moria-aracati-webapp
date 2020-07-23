@@ -15,8 +15,8 @@
         </div>
       </div>
       <div id="content" class="container-fluid px-0 mx-0">
-        <div class="row h-75">
-          <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12">
+        <div class="row h-100">
+          <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12 bg-black px-0 w-100">
             <router-view />
           </div>
           <div class="col text-center">
