@@ -1,25 +1,25 @@
 <template>
-  <section id="video" class="container-fluid mx-0 px-0 text-center">
-    <video-player
-      ref="videoPlayer"
-      class="vjs-custom-skin"
-      :options="options"
-      @play="onPlayerPlay($event)"
-      @ready="onPlayerReady($event)">
-    </video-player>
+  <section id="video" ref="video" class="container-fluid mx-0 px-0 text-center">
+    <iframe v-if="!loading" :style="style" src="https://playerv.uaihost.video/video/tvmoria/1/true/false/YzNKMk1TNTFZV2xvYjNOMExuWnBaR1Z2K1o/16:9/" scrolling="no" allowfullscreen="allowfullscreen" frameborder="0">
+    </iframe>
   </section>
 </template>
 
 <script>
-import { videoPlayer } from 'vue-videojs7'
+// import { videoPlayer } from 'vue-videojs7'
 
 export default {
   components: {
-    videoPlayer
+    // videoPlayer
+  },
+  beforeUpdate () {
+    console.log(this.$refs.video.clientWidth)
   },
   data () {
     return {
-      src: 'http://01.paineldevideo.com/tvmoria/tvmoria/playlist.m3u8',
+      src: 'https://playerv.uaihost.video/768ea72d-2e58-4010-bff1-7e92bdc1a7d5',
+      // src: 'http://01.paineldevideo.com/tvmoria/tvmoria/playlist.m3u8',
+      // https://playerv.uaihost.video/768ea72d-2e58-4010-bff1-7e92bdc1a7d5
       options: {
         autoplay: true,
         controls: true,
@@ -27,36 +27,20 @@ export default {
           timeDivider: false,
           durationDisplay: false
         }
-      }
-    }
-  },
-  computed: {
-    player () {
-      return this.$refs.videoPlayer.player
+      },
+      style: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+      },
+      loading: true
     }
   },
   mounted () {
-    // const src = 'https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8'
-    this.playVideo(this.src)
-  },
-  methods: {
-    onPlayerPlay (player) {
-      console.log('player play!', player)
-    },
-    onPlayerReady (player) {
-      console.log('player ready!', player)
-      this.player.play()
-    },
-    playVideo: function (source) {
-      const video = {
-        withCredentials: false,
-        type: 'application/x-mpegurl',
-        src: source
-      }
-      this.player.reset() // in IE11 (mode IE10) direct usage of src() when <src> is already set, generated errors,
-      this.player.src(video)
-      this.player.play()
-    }
+    const { clientWidth } = this.$refs.video
+    this.style.height = `${parseInt(clientWidth / 1.77)}px`
+    this.style.width = `${clientWidth}px`
+    this.loading = false
   }
 }
 </script>
@@ -64,11 +48,11 @@ export default {
 <style lang="scss" scoped>
   #video {
     width: 100%;
-    height: 100%;
-    background-color: black;
+    // height: 100%;
+    border-color: black;
 
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
   }
 </style>
