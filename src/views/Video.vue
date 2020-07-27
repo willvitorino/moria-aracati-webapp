@@ -1,7 +1,10 @@
 <template>
   <section id="video" ref="video" class="container-fluid mx-0 px-0 text-center h-100 w-100">
-    <iframe v-if="!loading" :style="style" src="https://playerv.uaihost.video/video/tvmoria/1/true/false/YzNKMk1TNTFZV2xvYjNOMExuWnBaR1Z2K1o/16:9/" scrolling="no" allowfullscreen="allowfullscreen" frameborder="0">
-    </iframe>
+    <div class="embed-responsive embed-responsive-4by3">
+      <iframe class="embed-responsive-item" :src="src" allowfullscreen></iframe>
+    </div>
+    <!-- <iframe v-if="!loading" :style="style" :src="src" scrolling="no" allowfullscreen="allowfullscreen" frameborder="0">
+    </iframe> -->
   </section>
 </template>
 
@@ -12,7 +15,7 @@ export default {
   },
   data () {
     return {
-      src: 'https://playerv.uaihost.video/768ea72d-2e58-4010-bff1-7e92bdc1a7d5',
+      src: 'https://playerv.uaihost.video/video/tvmoria/1/true/false/YzNKMk1TNTFZV2xvYjNOMExuWnBaR1Z2K1o/4:3/',
       style: {
         display: 'flex',
         justifyContent: 'center',
@@ -23,7 +26,7 @@ export default {
   },
   mounted () {
     const { clientWidth } = this.$refs.video
-    this.style.height = `${parseInt(clientWidth / 1.77)}px`
+    this.style.height = `${parseInt(clientWidth / 1.33)}px`
     this.style.width = `${clientWidth}px`
     this.loading = false
   }
@@ -35,5 +38,6 @@ export default {
     width: 100%;
     height: 99vh;
     background-color: black;
+    overflow-y: hidden;
   }
 </style>
