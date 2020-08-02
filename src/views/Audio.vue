@@ -56,7 +56,7 @@ import logo from '../assets/logo.png'
 export default {
   data () {
     return {
-      url: 'http://radcom1.rwpainelcast.live:35038/stream',
+      url: 'http://radcom1.rwpainelcast.live:7034/stream',
       player: new Audio(),
       plaing: false,
       logo: logo
